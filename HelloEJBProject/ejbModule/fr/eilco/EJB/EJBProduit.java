@@ -3,14 +3,12 @@ package fr.eilco.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
 import fr.eilco.facade.facadeProduit;
 import fr.eilco.model.Produit;
 /**
  * Session Bean implementation class EJBProduit
  */
-@Stateless(mappedName = "ProduitJNDI")
+@Stateless(mappedName = "CategorieJNDI")
 public class EJBProduit implements EJBProduitRemote, EJBProduitLocal {
 
     /**
@@ -33,6 +31,7 @@ public class EJBProduit implements EJBProduitRemote, EJBProduitLocal {
 
 
 
+	@Override
 	public Produit getProduit(int ID) {
 		// TODO Auto-generated method stub
 	   facadeProduit fp= new facadeProduit();

@@ -9,18 +9,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema="webcatalog", name="produit")
-public class Produit implements Serializable {
+@Table(schema="webcatalog", name="categorie")
+public class Categorie implements Serializable {
+
 	
 	
 	
-	public Produit(int id, String nomProduit) {
+	
+	public Categorie(int id, String nom) {
 		super();
 		this.id = id;
-		this.nomProduit = nomProduit;
+		this.nom = nom;
 	}
 	
-	public Produit() {
+	public Categorie() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -34,22 +36,19 @@ public class Produit implements Serializable {
 	private int id;
 
 	@Column
-	private String nomProduit;
+	private String nom;
 	
-	public String getNomProduit() {
-		return nomProduit;
+	public String getnom() {
+		return nom;
 	}
-	public void setNomProduit(String nomProduit) {
-		this.nomProduit = nomProduit;
+	public void setnom(String nom) {
+		this.nom = nom;
 	}
-	
-	@Column
 	public int getId(){
 		return this.id;
 	}
 	public void setId(int id){
 		this.id=id;
 	}
-	
 	
 }
