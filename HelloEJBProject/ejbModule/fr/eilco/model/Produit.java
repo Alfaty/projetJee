@@ -41,8 +41,7 @@ public class Produit implements Serializable {
 	private String description;
 	@Column 
 	private String id_categorie;
-	@Column
-	private String derniere_maj;
+
 	
 	public String getDescription() {
 		return description;
@@ -58,14 +57,6 @@ public class Produit implements Serializable {
 
 	public void setId_categorie(String id_categorie) {
 		this.id_categorie = id_categorie;
-	}
-
-	public String getDerniere_maj() {
-		return derniere_maj;
-	}
-
-	public void setDerniere_maj(String derniere_maj) {
-		this.derniere_maj = derniere_maj;
 	}
 
 	public void setPrix(double prix) {
