@@ -3,4 +3,4 @@
 
 Catégories
 
- ${produit.nomProduit}
+ ${categorie.nom}
