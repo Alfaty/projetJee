@@ -1,7 +1,8 @@
 package fr.eilco.EJB;
 
+import javax.ejb.Remote;
 import fr.eilco.model.Categorie;
-import fr.eilco.model.Produit;
+
 
 public interface EJBCategorieRemote {
 
