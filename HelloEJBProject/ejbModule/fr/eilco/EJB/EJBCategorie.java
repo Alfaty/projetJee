@@ -1,5 +1,7 @@
 package fr.eilco.EJB;
 
+import java.util.ArrayList;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,5 +30,11 @@ public class EJBCategorie implements EJBCategorieRemote, EJBCategorieLocal {
 	   facadeCategorie fc= new facadeCategorie();
 	   return fc.getCategorie(ID, mh);
 	}
+	
+	public ArrayList<Categorie> getAllCategorie(){
+		   facadeCategorie fc= new facadeCategorie();
+		   return fc.getAllCategorie(mh);
+	}
 }
+
 

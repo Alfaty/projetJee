@@ -4,3 +4,4 @@
 Catégories
 
  ${categorie.nom}
+ ${listeCategorie.nom}

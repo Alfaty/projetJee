@@ -1,6 +1,7 @@
 package fr.info.sdweb;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 import javax.naming.Context;
@@ -42,6 +43,7 @@ public class CategorieServlet extends HttpServlet {
 		Categorie bean = new Categorie();
  		HttpSession session = request.getSession(true);
  		Categorie c= new Categorie();
+ 		ArrayList<Categorie> listC= new ArrayList<Categorie>();
  		//Connexion JNDI (annuaire pour localiser l'EJB)
  		try{
  		final Hashtable jndiProperties = new Hashtable();
@@ -60,11 +62,14 @@ public class CategorieServlet extends HttpServlet {
  		context.lookup("ejb:"+appName+"/"+moduleName+"/"+
  		beanName+"!"+viewClassName);
  		
- 		c = remote.getCategorie(1); }catch (Exception e) {
+ 		c = remote.getCategorie(1);
+ 		listC= remote.getAllCategorie();
+ 		}catch (Exception e) {
  		e.printStackTrace();
  		}
  		//bean.
 		session.setAttribute("categorie", c);
+		session.setAttribute("listeCategorie", listC);
 		response.sendRedirect("Categorie.jsp");
 		
 		
