@@ -3,6 +3,7 @@ package fr.info.sdweb;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -43,7 +44,7 @@ public class CategorieServlet extends HttpServlet {
 		Categorie bean = new Categorie();
  		HttpSession session = request.getSession(true);
  		Categorie c= new Categorie();
- 		ArrayList<Categorie> listC= new ArrayList<Categorie>();
+ 		List<Categorie> listC= new ArrayList<Categorie>();
  		//Connexion JNDI (annuaire pour localiser l'EJB)
  		try{
  		final Hashtable jndiProperties = new Hashtable();

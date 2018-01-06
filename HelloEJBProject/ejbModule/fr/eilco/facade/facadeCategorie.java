@@ -1,8 +1,10 @@
 package fr.eilco.facade;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -20,13 +22,16 @@ public class facadeCategorie {
 		return (Categorie) mh.createQuery(cq).getSingleResult();
 }
 	
-	public ArrayList<Categorie> getAllCategorie(EntityManager mh) {
+	public List<Categorie> getAllCategorie(EntityManager mh) {
 		
 		CriteriaBuilder cb = mh.getCriteriaBuilder();
 		CriteriaQuery<Categorie> cq = cb.createQuery(Categorie.class);
 		Root<Categorie> categorie = cq.from(Categorie.class);
 		cq.select(categorie);	
-		return (ArrayList<Categorie>) mh.createQuery(cq);
+		TypedQuery<Categorie> q = mh.createQuery(cq);
+		List<Categorie> allcategories = q.getResultList();
+		return (List<Categorie>) mh.createQuery(cq);
+		
 }
 
 	
