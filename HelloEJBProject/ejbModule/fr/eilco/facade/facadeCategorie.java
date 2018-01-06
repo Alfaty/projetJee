@@ -29,8 +29,8 @@ public class facadeCategorie {
 		Root<Categorie> categorie = cq.from(Categorie.class);
 		cq.select(categorie);	
 		TypedQuery<Categorie> q = mh.createQuery(cq);
-		List<Categorie> allcategories = q.getResultList();
-		return (List<Categorie>) mh.createQuery(cq);
+		List<Categorie> allCategories = q.getResultList();
+		return allCategories;
 		
 }
 
