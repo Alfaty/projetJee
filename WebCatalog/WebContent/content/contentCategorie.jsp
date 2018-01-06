@@ -4,5 +4,5 @@
 Catégories
 
  ${categorie.nom}
- ${listeCategorie}
+ ${listeCategorie.toString()}
  
