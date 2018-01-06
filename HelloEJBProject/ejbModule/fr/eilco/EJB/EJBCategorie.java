@@ -1,41 +1,32 @@
 package fr.eilco.EJB;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import fr.eilco.facade.facadeCategorie;
 import fr.eilco.model.Categorie;
-import fr.eilco.model.Produit;
+/**
+ * Session Bean implementation class EJBCategorie
+ */
+@Stateless(mappedName = "CategorieJNDI")
 public class EJBCategorie implements EJBCategorieRemote, EJBCategorieLocal {
 
-    /**
-     * Default constructor. 
-     */
     public EJBCategorie() {
-        // TODO Auto-generated constructor stub
     }
 
     @PersistenceContext(unitName="managerHello")
     EntityManager mh;
     
     
-    void insertEntity(Categorie c) {
-    	mh.persist(c);
+    void insertEntity(Categorie p) {
+    	mh.persist(p);
     	mh.flush();
-    	
     }
 
+
 	public Categorie getCategorie(int ID) {
-		// TODO Auto-generated method stub
 	   facadeCategorie fc= new facadeCategorie();
 	   return fc.getCategorie(ID, mh);
 	}
-
-
-
-
-
-
-
-
 }
+
