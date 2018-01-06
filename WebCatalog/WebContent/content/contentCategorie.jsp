@@ -3,6 +3,10 @@
 
 Catégories
 
- ${categorie.nom}
- ${listeCategorie.get(1).nom}
+</br>
+ ${listeCategorie.get(0).name}
+ </br>
+ ${listeCategorie.get(1).name}
+ </br>
+ ${listeCategorie.get(2).name}
  
