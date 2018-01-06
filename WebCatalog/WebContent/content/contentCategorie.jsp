@@ -4,5 +4,5 @@
 Catégories
 
  ${categorie.nom}
- ${listeCategorie.toString()}
+ ${listeCategorie.get(1).nom}
  
