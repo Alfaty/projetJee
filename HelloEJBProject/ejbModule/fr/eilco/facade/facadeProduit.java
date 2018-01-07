@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
 
 import fr.eilco.model.Produit;
@@ -30,19 +31,18 @@ public class facadeProduit {
 		TypedQuery<Produit> q = mh.createQuery(cq);
 		List<Produit> allProduits = q.getResultList();
 		return allProduits;	
-}
+	}
 	
 	public List<Produit> getProduitFromCategorie(int idC,EntityManager mh) {
 		
 		CriteriaBuilder cb = mh.getCriteriaBuilder();
 		CriteriaQuery<Produit> cq = cb.createQuery(Produit.class);
 		Root<Produit> produit = cq.from(Produit.class);
-		cq.select(produit).where(cb.equal(produit.get("id_categorie"), idC));	
+		ParameterExpression<Integer> p = cb.parameter(Integer.class);
+		cq.select(produit).where(cb.gt(produit.get("id_categorie"), p));	
 		TypedQuery<Produit> q = mh.createQuery(cq);
+		q.setParameter(p,idC);
 		List<Produit> allProduits = q.getResultList();
 		return allProduits;	
-}
-	
-	
-	
+	}
 }
