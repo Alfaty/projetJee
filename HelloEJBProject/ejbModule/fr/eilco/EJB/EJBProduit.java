@@ -1,5 +1,7 @@
 package fr.eilco.EJB;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,5 +29,10 @@ public class EJBProduit implements EJBProduitRemote, EJBProduitLocal {
 	public Produit getProduit(int ID) {
 	   facadeProduit fp= new facadeProduit();
 	   return fp.getProduit(ID, mh);
+	}
+	
+	public List<Produit> getAllProduit(){
+		facadeProduit fp= new facadeProduit();
+		return fp.getAllProduit(mh);
 	}
 }
