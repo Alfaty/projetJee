@@ -40,7 +40,7 @@ public class Produit implements Serializable {
 	@Column 
 	private String description;
 	@Column 
-	private String id_categorie;
+	private int id_categorie;
 
 	
 	public String getDescription() {
@@ -51,11 +51,11 @@ public class Produit implements Serializable {
 		this.description = description;
 	}
 
-	public String getId_categorie() {
+	public int getId_categorie() {
 		return id_categorie;
 	}
 
-	public void setId_categorie(String id_categorie) {
+	public void setId_categorie(int id_categorie) {
 		this.id_categorie = id_categorie;
 	}
 
