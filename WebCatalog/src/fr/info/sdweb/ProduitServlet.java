@@ -22,7 +22,7 @@ import fr.eilco.model.Produit;
 /**
  * Servlet implementation class ProduitServlet
  */
-@WebServlet("/Produit")
+@WebServlet("/produit")
 public class ProduitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

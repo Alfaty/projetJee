@@ -18,6 +18,7 @@
   <ul>
 		<li><a href="index.jsp">Accueil</a></li>
 		<li><a href="categorie">Catégories</a></li>
+		<li><a href="produit">Produits</a></li>
 		<li><a href="Panier.jsp">Votre panier</a></li>
 	</ul>
  </div>
