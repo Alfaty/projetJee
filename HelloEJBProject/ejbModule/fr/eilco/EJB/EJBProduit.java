@@ -36,6 +36,9 @@ public class EJBProduit implements EJBProduitRemote, EJBProduitLocal {
 		return fp.getAllProduit(mh);
 	}
 	
-
+	public List<Produit> getProduitFromCategorie(int idC){
+		facadeProduit fp= new facadeProduit();
+		return fp.getProduitFromCategorie(idC,mh);
+	}
 
 }
