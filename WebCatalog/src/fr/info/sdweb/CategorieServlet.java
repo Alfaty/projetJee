@@ -64,7 +64,7 @@ public class CategorieServlet extends HttpServlet {
  		beanName+"!"+viewClassName);
  		
  		c = remote.getCategorie(1);
- 		listC= remote.getAllCategorie();
+ 		//listC= remote.getAllCategorie();
  		}catch (Exception e) {
  		e.printStackTrace();
  		}

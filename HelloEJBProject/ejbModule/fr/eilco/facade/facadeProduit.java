@@ -30,7 +30,7 @@ public class facadeProduit {
 		cq.select(Produit);	
 		TypedQuery<Produit> q = mh.createQuery(cq);
 		List<Produit> allProduits = q.getResultList();
-		return allProduits;	
+		return allProduits;
 	}
 	
 	public List<Produit> getProduitFromCategorie(int idC,EntityManager mh) {
