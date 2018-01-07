@@ -29,8 +29,20 @@ public class facadeProduit {
 		cq.select(Produit);	
 		TypedQuery<Produit> q = mh.createQuery(cq);
 		List<Produit> allProduits = q.getResultList();
-		return allProduits;
-		
+		return allProduits;	
 }
+	
+	public List<Produit> getProduitFromCategorie(int idC,EntityManager mh) {
+		
+		CriteriaBuilder cb = mh.getCriteriaBuilder();
+		CriteriaQuery<Produit> cq = cb.createQuery(Produit.class);
+		Root<Produit> produit = cq.from(Produit.class);
+		cq.select(produit).where(cb.equal(produit.get("id_categorie"), idC));	
+		TypedQuery<Produit> q = mh.createQuery(cq);
+		List<Produit> allProduits = q.getResultList();
+		return allProduits;	
+}
+	
+	
 	
 }

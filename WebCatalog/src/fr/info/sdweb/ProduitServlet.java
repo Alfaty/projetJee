@@ -45,6 +45,7 @@ public class ProduitServlet extends HttpServlet {
  		HttpSession session = request.getSession(true);
  		Produit p= new Produit();
  		List<Produit> listP= new ArrayList<Produit>();
+ 		List<Produit> listPLivre= new ArrayList<Produit>();
  		//Connexion JNDI (annuaire pour localiser l'EJB)
  		try{
  		final Hashtable jndiProperties = new Hashtable();
@@ -65,15 +66,15 @@ public class ProduitServlet extends HttpServlet {
  		
  		p = remote.getProduit(1);
  		listP= remote.getAllProduit();
+ 		listPLivre=remote.getProduitFromCategorie(1);
  		}catch (Exception e) {
  		e.printStackTrace();
  		}
  		//bean.
 		session.setAttribute("Produit", p);
 		session.setAttribute("listeProduit", listP);
+		session.setAttribute("listeProduitLivre", listPLivre);
 		response.sendRedirect("Produit.jsp");
-		
-		
 	}
 
 	/**

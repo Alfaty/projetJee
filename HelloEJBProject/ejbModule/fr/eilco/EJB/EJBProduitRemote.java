@@ -8,8 +8,7 @@ import fr.eilco.model.Produit;
 
 @Remote
 public interface EJBProduitRemote {
-
 	public Produit getProduit(int ID);
 	public List<Produit> getAllProduit();
-		
+	public List<Produit> getProduitFromCategorie(int idC);
 }
