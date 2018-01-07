@@ -3,3 +3,4 @@
 
 ${listeProduit[0].nomProduit}
 ${listeProduit[1].nomProduit}
+${listeProduiLivre[0].nomProduit}
