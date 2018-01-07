@@ -12,5 +12,6 @@ public interface EJBCategorieRemote {
 
 	public Categorie getCategorie(int ID);
 	public List<Categorie> getAllCategorie();
+
 		
 }
