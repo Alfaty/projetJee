@@ -70,7 +70,7 @@ public class ProduitServlet extends HttpServlet {
  		}
  		//bean.
 		session.setAttribute("Produit", p);
-		session.setAttribute("listeProduit", listP);
+		session.setAttribute("listeProduit", "test");
 		response.sendRedirect("Produit.jsp");
 		
 		
